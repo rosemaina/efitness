@@ -1,0 +1,7 @@
+eFitness/Podfile.lock
+.DS_Store
+*.xcuserstate
+xcuserdata
+Pods/
+build/
+dSYMs/
