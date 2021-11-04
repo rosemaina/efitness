@@ -9,13 +9,7 @@ import UIKit
 
 public enum AppStoryboard: String {
 
-    case BusSchedules
     case Main
-    case Onboarding
-    case Profile
-    case Schedules
-    case SignIn
-    case SignUp
     
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
@@ -42,9 +36,16 @@ extension UIViewController {
     }
 }
 
+// MARK: - Configure Alerts
 extension UIViewController {
-    func presentAlertController(withMessage message: String) {
+    func presentErrorAlert(message: String) {
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentSuccessAlert(message: String) {
+        let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
@@ -56,8 +57,23 @@ extension UIViewController {
     }
     
     func presentCustomAlert(title: String, message: String) {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Dimiss Keyboard
+extension UIViewController {
+    func hideKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
