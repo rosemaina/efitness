@@ -15,62 +15,67 @@ class LoginViewModel {
     let disposeBag = DisposeBag()
     var handle: AuthStateDidChangeListenerHandle?
     
+    var emailAlertMessage = ""
+    var passwordAlertMessage = ""
+    var showTabBarScene = PublishRelay<Bool>()
+    var email = BehaviorRelay<String>(value: "")
+    var password = BehaviorRelay<String>(value: "")
+    var enableLoginAction = BehaviorRelay<Bool>(value: false)
+    
+    private var onscreenPassword = ""
+    private var onscreenEmail = ""
+    
     lazy var validator: Validator = {
         return TextFieldValidator()
     }()
     
-    var isEmailValid = BehaviorSubject(value: false)
-    var isPasswordValid = BehaviorSubject(value: false)
-    
-    var showEmptyFieldsAlert = PublishRelay<Bool>()
-    var showInvalidEmailAlert = PublishRelay<Bool>()
-    var showInvalidPasswordAlert = PublishRelay<Bool>()
-    var showTabBarScene = PublishRelay<Bool>()
-    
-    // MARK: - Public Methods
-    
-    func validateEmail(email: String?) -> Bool {
-        guard let email = email else {
-            isEmailValid.onNext(false)
-            return false
-        }
-        
-        let validEmail = self.validator.isEmailValid(email)
-        
-        if !validEmail {
-            isEmailValid.onNext(false)
-            self.showInvalidEmailAlert.accept(true)
-            return false
-        }
-        
-        if email.isEmpty {
-            self.showEmptyFieldsAlert.accept(true)
-        }
-        
-        isEmailValid.onNext(true)
-        return true
+    // MARK: - Initializer
+    init() {
+        self.validateInput()
     }
     
-    func validatePassword(password: String?) -> Bool {
-        guard let password = password else {
-            isPasswordValid.onNext(false)
-            return false
+    // MARK: - Public Methods
+    private func validateInput() {
+        Observable
+            .combineLatest(email.asObservable(),
+                           password.asObservable())
+            { [weak self] email, password in
+                guard let self = self else  { return }
+                self.onscreenEmail = email
+                self.onscreenPassword = password
+                
+                let isFieldsValid = !email.isEmpty && !password.isEmpty
+                self.enableLoginAction.accept(isFieldsValid)
+            }
+            .observeOn(MainScheduler.instance)
+            .subscribe()
+            .disposed(by: disposeBag)
+    }
+    
+    func validateEmail() {
+        emailAlertMessage = ""
+        var message = ""
+        
+        let isEmailVaid = validator.isEmailValid(onscreenEmail)
+        
+        if !isEmailVaid {
+            message = "Please enter a valid email address."
         }
         
-        let validPassword = self.validator.isPasswordValid(password)
+        emailAlertMessage = message
+    }
+    
+    func validatePassword() {
+        passwordAlertMessage = ""
+        var message = ""
         
-        if !validPassword {
-            isPasswordValid.onNext(false)
-            self.showInvalidPasswordAlert.accept(true)
-            return false
+        let isPasswordValid = self.validator.isPasswordValid(onscreenPassword)
+    
+        if !isPasswordValid {
+            message = "Password should contain 8-10 characters, uppercase letter, lowercase letter, number and special character."
         }
         
-        if password.isEmpty {
-            self.showEmptyFieldsAlert.accept(true)
-        }
-        
-        isPasswordValid.onNext(true)
-        return true
+        passwordAlertMessage = message
     }
     
     // Handle user login state
@@ -82,5 +87,4 @@ class LoginViewModel {
             }
         })
     }
-    
 }

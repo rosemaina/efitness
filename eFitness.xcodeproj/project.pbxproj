@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A7256C83A6A26AF3C3AFE02 /* Pods_eFitness_eFitnessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCCEBD2A1611541D72A96E45 /* Pods_eFitness_eFitnessUITests.framework */; };
+		1955CB8C2738794E00A4C7AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB8B2738794E00A4C7AB /* String+.swift */; };
 		1966B993272063330030BBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966B992272063330030BBC9 /* AppDelegate.swift */; };
 		1966B995272063330030BBC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966B994272063330030BBC9 /* SceneDelegate.swift */; };
 		1966B99A272063330030BBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1966B998272063330030BBC9 /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1955CB8B2738794E00A4C7AB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		1966B98F272063330030BBC9 /* eFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1966B992272063330030BBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1966B994272063330030BBC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				19FA3580272F86D400110220 /* UIFont+.swift */,
 				19FA3582272F871A00110220 /* UIColor+.swift */,
 				19FA3588272FB60C00110220 /* UIView+.swift */,
+				1955CB8B2738794E00A4C7AB /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -327,10 +330,10 @@
 		19CD37EA2726D48100474862 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				19CD37EB2726D48F00474862 /* LoginViewModel.swift */,
 				19CD37ED2726D61700474862 /* BaseViewModel.swift */,
-				19CD37EF2726DB1E00474862 /* RegisterViewModel.swift */,
 				19CD37F62726E8D200474862 /* HomeViewModel.swift */,
+				19CD37EB2726D48F00474862 /* LoginViewModel.swift */,
+				19CD37EF2726DB1E00474862 /* RegisterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				1966B9D0272067EB0030BBC9 /* LoginScene.swift in Sources */,
 				19FA3587272FAE2700110220 /* TextfieldValidator.swift in Sources */,
 				19FA357F272F868F00110220 /* UITextField+.swift in Sources */,
+				1955CB8C2738794E00A4C7AB /* String+.swift in Sources */,
 				19FA3583272F871A00110220 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

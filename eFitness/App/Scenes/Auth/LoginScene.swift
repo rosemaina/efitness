@@ -42,14 +42,6 @@ class LoginScene: UIViewController {
         self.presentRegistration()
     }
     
-    @IBAction func handleUserLogin() {
-        guard let email = emailTextField.text,
-              let password = passwordTextField.text
-        else { return }
-        
-        loginUser(email: email, password: password)
-    }
-    
     // MARK: - Private Methods
     
     func clearTextfields() {
@@ -60,7 +52,6 @@ class LoginScene: UIViewController {
     func configureViews() {
         viewModel = LoginViewModel()
 
-        loginButton.isEnabled = false
         loginButton.addCornerRadiusAndShadow()
         emailTextField.keyboardType = .emailAddress
         emailTextField.addDoneButtonOnKeyboard()
@@ -71,6 +62,7 @@ class LoginScene: UIViewController {
     
     func presentRegistration() {
         let scene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterScene") as! RegisterScene
+        scene.modalPresentationStyle = .fullScreen
         self.present(scene, animated: true, completion: nil)
     }
     
@@ -102,51 +94,51 @@ extension LoginScene {
     func configureObservables() {
         guard let viewModel = viewModel else { return }
         
-        emailTextField.rx.controlEvent([.editingChanged, .editingDidEnd]).asObservable().subscribe({ _ in
-            viewModel.isEmailValid.onNext(viewModel.validateEmail(email: self.emailTextField.text))
-        }).disposed(by: viewModel.disposeBag)
+        emailTextField
+            .rx
+            .controlEvent(.editingChanged).asDriver()
+            .do(onNext: { [weak self] _ in
+                self?.viewModel?.email.accept(self?.emailTextField.text?.removingSpaces ?? "")
+            }).drive()
+            .disposed(by: viewModel.disposeBag)
         
-        passwordTextField.rx.controlEvent([.editingChanged, .editingDidEnd]).asObservable().subscribe({ _ in
-            viewModel.isPasswordValid.onNext(viewModel.validatePassword(password: self.passwordTextField.text))
-        }).disposed(by: viewModel.disposeBag)
+        passwordTextField
+            .rx
+            .controlEvent(.editingChanged).asDriver()
+            .do(onNext: { [weak self] _ in
+                self?.viewModel?.password.accept(self?.passwordTextField.text?.removingSpaces ?? "")
+            }).drive()
+            .disposed(by: viewModel.disposeBag)
         
-        let email = viewModel.isEmailValid.asObservable()
-        let password = viewModel.isPasswordValid.asObservable()
+        viewModel
+            .enableLoginAction
+            .asDriver()
+            .do(onNext: {value in
+                let color = value ? Colors.darkGreen : Colors.inactiveGray
+                self.loginButton.backgroundColor = color
+            })
+            .drive()
+            .disposed(by: viewModel.disposeBag)
         
-        Observable.combineLatest(email, password) { [unowned self] emailStatus, passwordStatus in
-            let buttonEnabled = emailStatus && passwordStatus
-            self.loginButton.backgroundColor = buttonEnabled ? Colors.darkGreen : Colors.inactiveGray
-            self.loginButton.isEnabled = buttonEnabled ? true : false
-        }.subscribe().disposed(by: viewModel.disposeBag)
-        
-        viewModel.showInvalidEmailAlert.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] show in
-            guard let self = self else {return}
-            if show {
-                self.presentHomeTabBar()
-            }
-        }).disposed(by: viewModel.disposeBag)
-            
-        // Alert Messages
-//        viewModel.showEmptyFieldsAlert.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] show in
-//            guard let self = self else {return}
-//            if show {
-//                self.presentCustomAlert(title: "Empty Fields", message: "All fields are required to contiue.")
-//            }
-//        }).disposed(by: viewModel.disposeBag)
-//
-//        viewModel.showInvalidEmailAlert.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] show in
-//            guard let self = self else {return}
-//            if show {
-//                self.presentCustomAlert(title: "Invalid Email", message: "Please enter a valid email address")
-//            }
-//        }).disposed(by: viewModel.disposeBag)
-//
-//        viewModel.showInvalidPasswordAlert.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] show in
-//            guard let self = self else {return}
-//            if show {
-//                self.presentCustomAlert(title: "Invalid Password", message: "Password should contain 8-10 characters, uppercase letter, lowercase letter, number and special character.")
-//            }
-//        }).disposed(by: viewModel.disposeBag)
+        loginButton
+            .rx
+            .tap
+            .bind{[weak self] _ in
+                guard let self = self else { return }
+                guard let viewModel = self.viewModel else { return }
+                
+                viewModel.validateEmail()
+                viewModel.validatePassword()
+                
+                let passwordMsg = viewModel.passwordAlertMessage
+                let emailMsg = viewModel.emailAlertMessage
+                
+                if passwordMsg.isEmpty && emailMsg.isEmpty {
+                    self.loginUser(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "")
+                } else {
+                    self.presentActionSheet(message: "\(emailMsg) \n\(passwordMsg)")
+                }
+            }.disposed(by: viewModel.disposeBag)
     }
 }
 

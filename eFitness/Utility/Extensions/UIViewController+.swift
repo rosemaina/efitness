@@ -63,6 +63,14 @@ extension UIViewController {
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func presentActionSheet(message: String) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - Dimiss Keyboard

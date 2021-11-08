@@ -21,18 +21,10 @@ class RegisterScene: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        configureObservables()
     }
     
     // MARK: - Instance Methods
-    @IBAction func handleUserRegistration() {
-        guard let email = emailTextField.text,
-              let password = passwordTextField.text,
-              let username = passwordTextField.text
-        else { return }
-        
-        registerUser(email: email, password: password, username: username)
-    }
-    
     @IBAction func presentLoginScene() {
         self.presentLogin()
     }
@@ -41,7 +33,6 @@ class RegisterScene: UIViewController {
     func configureViews() {
         viewModel = RegisterViewModel()
 
-        signUpButton.isEnabled = false
         signUpButton.addCornerRadiusAndShadow()
         emailTextField.keyboardType = .emailAddress
         emailTextField.addDoneButtonOnKeyboard()
@@ -53,6 +44,7 @@ class RegisterScene: UIViewController {
     
     func presentLogin() {
         let scene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginScene") as! LoginScene
+        scene.modalPresentationStyle = .fullScreen
         self.present(scene, animated: true, completion: nil)
     }
     
@@ -69,6 +61,69 @@ class RegisterScene: UIViewController {
         alertController.addAction(confirmAction)
         
         self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - RXswift Setup
+extension RegisterScene {
+    func configureObservables() {
+        guard let viewModel = viewModel else { return }
+        
+        emailTextField
+            .rx
+            .controlEvent(.editingChanged).asDriver()
+            .do(onNext: { [weak self] _ in
+                self?.viewModel?.email.accept(self?.emailTextField.text?.removingSpaces ?? "")
+            }).drive()
+            .disposed(by: viewModel.disposeBag)
+        
+        passwordTextField
+            .rx
+            .controlEvent(.editingChanged).asDriver()
+            .do(onNext: { [weak self] _ in
+                self?.viewModel?.password.accept(self?.passwordTextField.text?.removingSpaces ?? "")
+            }).drive()
+            .disposed(by: viewModel.disposeBag)
+        
+        usernameTextField
+            .rx
+            .controlEvent(.editingChanged).asDriver()
+            .do(onNext: { [weak self] _ in
+                self?.viewModel?.username.accept(self?.usernameTextField.text?.removingSpaces ?? "")
+            }).drive()
+            .disposed(by: viewModel.disposeBag)
+        
+        viewModel
+            .enableRegisterAction
+            .asDriver()
+            .do(onNext: {value in
+                let color = value ? Colors.darkGreen : Colors.inactiveGray
+                self.signUpButton.backgroundColor = color
+            })
+            .drive()
+            .disposed(by: viewModel.disposeBag)
+        
+        signUpButton
+            .rx
+            .tap
+            .bind{[weak self] _ in
+                guard let self = self else { return }
+                guard let viewModel = self.viewModel else { return }
+                
+                viewModel.validateEmail()
+                viewModel.validatePassword()
+                viewModel.validateUsername()
+                
+                let passwordMsg = viewModel.passwordAlertMessage
+                let emailMsg = viewModel.emailAlertMessage
+                let usernameMsg = viewModel.usernameAlertMessage
+                
+                if passwordMsg.isEmpty && emailMsg.isEmpty && usernameMsg.isEmpty {
+                    self.registerUser(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "", username: self.usernameTextField.text ?? "")
+                } else {
+                    self.presentActionSheet(message: "1. \(emailMsg) \n2. \(passwordMsg) \n3. \(usernameMsg)")
+                }
+            }.disposed(by: viewModel.disposeBag)
     }
 }
 
