@@ -36,7 +36,7 @@
                                     <constraint firstAttribute="height" constant="45" id="dTB-1b-WfP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Enter password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXB-UN-LtU">
                                 <rect key="frame" x="16" y="278.5" width="382" height="45"/>
@@ -44,7 +44,7 @@
                                     <constraint firstAttribute="height" constant="45" id="ey0-b3-g9U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8y1-xQ-HX6">
                                 <rect key="frame" x="16" y="119" width="87.5" height="29.5"/>
@@ -340,20 +340,8 @@
                     <view key="view" contentMode="scaleToFill" id="PZb-Cp-nxj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOC-f6-oT6">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="CHs-Ir-SsP"/>
                         <color key="backgroundColor" red="0.87450980392156863" green="1" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="hOC-f6-oT6" firstAttribute="bottom" secondItem="CHs-Ir-SsP" secondAttribute="bottom" id="HV5-3Y-8H6"/>
-                            <constraint firstItem="hOC-f6-oT6" firstAttribute="leading" secondItem="CHs-Ir-SsP" secondAttribute="leading" id="MQ6-Pa-cWa"/>
-                            <constraint firstItem="hOC-f6-oT6" firstAttribute="trailing" secondItem="CHs-Ir-SsP" secondAttribute="trailing" id="WFl-dj-n0k"/>
-                            <constraint firstItem="hOC-f6-oT6" firstAttribute="top" secondItem="CHs-Ir-SsP" secondAttribute="top" id="oBb-cd-8Ra"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" selectedImage="video" catalog="system" id="I9j-H8-BV6"/>
                 </viewController>
@@ -395,7 +383,7 @@
                                     <constraint firstAttribute="height" constant="40" id="vav-xW-IHV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Enter password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bz-jW-p8g">
                                 <rect key="frame" x="16" y="278.5" width="382" height="40"/>
@@ -403,7 +391,7 @@
                                     <constraint firstAttribute="height" constant="40" id="dd1-lF-bfG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Enter username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-cj-rvf">
                                 <rect key="frame" x="16" y="338.5" width="382" height="40"/>
@@ -411,7 +399,7 @@
                                     <constraint firstAttribute="height" constant="40" id="vGq-Ja-fBh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5K-CZ-ivQ">
                                 <rect key="frame" x="16" y="119" width="382" height="29.5"/>

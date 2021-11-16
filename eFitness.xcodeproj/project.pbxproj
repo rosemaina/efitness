@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A7256C83A6A26AF3C3AFE02 /* Pods_eFitness_eFitnessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCCEBD2A1611541D72A96E45 /* Pods_eFitness_eFitnessUITests.framework */; };
 		1955CB8C2738794E00A4C7AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB8B2738794E00A4C7AB /* String+.swift */; };
+		1955CB922739674500A4C7AB /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB912739674500A4C7AB /* VideoPreviewView.swift */; };
+		1955CB942739695800A4C7AB /* CustomCameraScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB932739695800A4C7AB /* CustomCameraScene.swift */; };
 		1966B993272063330030BBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966B992272063330030BBC9 /* AppDelegate.swift */; };
 		1966B995272063330030BBC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966B994272063330030BBC9 /* SceneDelegate.swift */; };
 		1966B99A272063330030BBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1966B998272063330030BBC9 /* Main.storyboard */; };
@@ -36,7 +38,6 @@
 		1966BA5527207AB00030BBC9 /* Montserrat-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1966BA4427207AB00030BBC9 /* Montserrat-ExtraLightItalic.otf */; };
 		1966BA5627207AB00030BBC9 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1966BA4527207AB00030BBC9 /* Montserrat-ExtraBold.otf */; };
 		1966BA5A27209ECF0030BBC9 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966BA5927209ECF0030BBC9 /* UIViewController+.swift */; };
-		19B260FA272BBD9A00BC3CD4 /* VideoPlaybackScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B260F9272BBD9A00BC3CD4 /* VideoPlaybackScene.swift */; };
 		19CD37E1272673E600474862 /* AccountScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37E0272673E600474862 /* AccountScene.swift */; };
 		19CD37E62726781B00474862 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37E52726781B00474862 /* Constants.swift */; };
 		19CD37E92726913100474862 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19CD37E82726913100474862 /* GoogleService-Info.plist */; };
@@ -75,6 +76,8 @@
 
 /* Begin PBXFileReference section */
 		1955CB8B2738794E00A4C7AB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		1955CB912739674500A4C7AB /* VideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewView.swift; sourceTree = "<group>"; };
+		1955CB932739695800A4C7AB /* CustomCameraScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraScene.swift; sourceTree = "<group>"; };
 		1966B98F272063330030BBC9 /* eFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1966B992272063330030BBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1966B994272063330030BBC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +111,6 @@
 		1966BA4427207AB00030BBC9 /* Montserrat-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.otf"; sourceTree = "<group>"; };
 		1966BA4527207AB00030BBC9 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
 		1966BA5927209ECF0030BBC9 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
-		19B260F9272BBD9A00BC3CD4 /* VideoPlaybackScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackScene.swift; sourceTree = "<group>"; };
 		19CD37E0272673E600474862 /* AccountScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountScene.swift; sourceTree = "<group>"; };
 		19CD37E52726781B00474862 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		19CD37E82726913100474862 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -301,7 +303,8 @@
 			children = (
 				19CD37E0272673E600474862 /* AccountScene.swift */,
 				19DBDB0E272ABF400045712F /* CameraScene.swift */,
-				19B260F9272BBD9A00BC3CD4 /* VideoPlaybackScene.swift */,
+				1955CB912739674500A4C7AB /* VideoPreviewView.swift */,
+				1955CB932739695800A4C7AB /* CustomCameraScene.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -649,8 +652,8 @@
 				19DBDB0F272ABF400045712F /* CameraScene.swift in Sources */,
 				19CD37E62726781B00474862 /* Constants.swift in Sources */,
 				19FA3589272FB60C00110220 /* UIView+.swift in Sources */,
+				1955CB942739695800A4C7AB /* CustomCameraScene.swift in Sources */,
 				1966BA5A27209ECF0030BBC9 /* UIViewController+.swift in Sources */,
-				19B260FA272BBD9A00BC3CD4 /* VideoPlaybackScene.swift in Sources */,
 				19CD37F52726E76700474862 /* FeedbackModel.swift in Sources */,
 				19CD37E1272673E600474862 /* AccountScene.swift in Sources */,
 				19CD37F22726E71400474862 /* EfitnessClient.swift in Sources */,
@@ -661,6 +664,7 @@
 				19CD37EC2726D48F00474862 /* LoginViewModel.swift in Sources */,
 				1966B9CE272067DC0030BBC9 /* RegisterScene.swift in Sources */,
 				1966B9D0272067EB0030BBC9 /* LoginScene.swift in Sources */,
+				1955CB922739674500A4C7AB /* VideoPreviewView.swift in Sources */,
 				19FA3587272FAE2700110220 /* TextfieldValidator.swift in Sources */,
 				19FA357F272F868F00110220 /* UITextField+.swift in Sources */,
 				1955CB8C2738794E00A4C7AB /* String+.swift in Sources */,

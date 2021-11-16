@@ -30,6 +30,7 @@ class AccountScene: UIViewController {
             do {
                 try Auth.auth().signOut()
                 let scene = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "LoginScene")
+                scene.modalPresentationStyle = .fullScreen
                 self.present(scene, animated: true, completion: nil)
             } catch let signOutError as NSError {
                 self.presentErrorAlert(message: signOutError as! String)
