@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A7256C83A6A26AF3C3AFE02 /* Pods_eFitness_eFitnessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCCEBD2A1611541D72A96E45 /* Pods_eFitness_eFitnessUITests.framework */; };
+		1908B8C627498C4900A99A10 /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8C527498C4800A99A10 /* ProfileScene.swift */; };
 		19434C292749365700839CA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19434C282749365700839CA8 /* User.swift */; };
 		1955CB8C2738794E00A4C7AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB8B2738794E00A4C7AB /* String+.swift */; };
 		1955CB922739674500A4C7AB /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB912739674500A4C7AB /* CameraPreview.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1908B8C527498C4800A99A10 /* ProfileScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
 		19434C282749365700839CA8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1955CB8B2738794E00A4C7AB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		1955CB912739674500A4C7AB /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
@@ -169,6 +171,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1908B8C72749916B00A99A10 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				19CD37E0272673E600474862 /* AccountScene.swift */,
+				1908B8C527498C4800A99A10 /* ProfileScene.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		1966B986272063330030BBC9 = {
 			isa = PBXGroup;
 			children = (
@@ -302,15 +313,14 @@
 			path = Montserrat;
 			sourceTree = "<group>";
 		};
-		19CD37DD272673C000474862 /* Home */ = {
+		19CD37DD272673C000474862 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				19CD37E0272673E600474862 /* AccountScene.swift */,
 				19DBDB0E272ABF400045712F /* CameraScene.swift */,
 				1955CB912739674500A4C7AB /* CameraPreview.swift */,
 				1955CB932739695800A4C7AB /* CustomCameraScene.swift */,
 			);
-			path = Home;
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		19CD37E2272677AC00474862 /* Extensions */ = {
@@ -357,8 +367,9 @@
 		19FA3584272F8A8700110220 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				19CD37DD272673C000474862 /* Home */,
+				1908B8C72749916B00A99A10 /* Account */,
 				1966B9CC272067C90030BBC9 /* Auth */,
+				19CD37DD272673C000474862 /* Camera */,
 				1966B9CB272067B70030BBC9 /* Storyboards */,
 			);
 			path = Scenes;
@@ -677,6 +688,7 @@
 				19FA357F272F868F00110220 /* UITextField+.swift in Sources */,
 				1955CB8C2738794E00A4C7AB /* String+.swift in Sources */,
 				19FA3583272F871A00110220 /* UIColor+.swift in Sources */,
+				1908B8C627498C4900A99A10 /* ProfileScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
