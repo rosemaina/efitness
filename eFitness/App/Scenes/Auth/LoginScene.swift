@@ -43,7 +43,7 @@ class LoginScene: UIViewController {
     }
     
     // MARK: - Private Methods
-    
+
     func clearTextfields() {
         emailTextField.text = nil
         passwordTextField.text = nil
@@ -58,6 +58,7 @@ class LoginScene: UIViewController {
         passwordTextField.addDoneButtonOnKeyboard()
         
         hideKeyboard()
+        setupPreTextEmail()
     }
     
     func presentRegistration() {
@@ -86,6 +87,17 @@ class LoginScene: UIViewController {
         alertController.addAction(confirmAction)
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func setupPreTextEmail() {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        reference.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.exists() {
+                guard let response = snapshot.value as? [String: String] else { return }
+                self.emailTextField.text = response["email"]
+            }
+        })
     }
 }
 

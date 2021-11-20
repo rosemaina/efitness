@@ -146,6 +146,18 @@ extension RegisterScene {
                     self.presentErrorAlert(message: "\(error.localizedDescription)")
                 }
             } else {
+                
+                guard let uid = authResult?.user.uid else { return }
+                
+                // Save Data for Authenticated User
+                let userID = self.reference.child("users").child(uid)
+                let values = ["username": username, "email": email]
+                userID.updateChildValues(values, withCompletionBlock: { (error, ref) in
+                    if let error = error {
+                        self.presentErrorAlert(message: "\(error.localizedDescription)")
+                    }
+                })
+                
                 self.sendVerificationEmail(authResult)
             }
         }

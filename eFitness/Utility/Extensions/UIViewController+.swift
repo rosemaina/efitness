@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 public enum AppStoryboard: String {
 
@@ -33,6 +34,12 @@ extension UIViewController {
     
     public static func instantiate(fromAppStoryboard appStoryboard: AppStoryboard, withIdentifier identifier: String? = nil) -> Self {
         return appStoryboard.viewController(viewControllerClass: self, identifier: identifier)
+    }
+}
+
+extension UIViewController {
+    var reference: DatabaseReference {
+        return  Database.database().reference()
     }
 }
 

@@ -8,9 +8,6 @@
 import Firebase
 
 class BaseViewModel {
-    var currentUser : User? {
-        return Auth.auth().currentUser
-    }
     
     let client: EfitnessClient
     
