@@ -76,15 +76,31 @@
                                     <action selector="presentRegistrationScene" destination="j7V-vD-fnB" eventType="touchUpInside" id="SJa-Qs-xac"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbo-au-S32">
+                                <rect key="frame" x="268" y="448.5" width="130" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VaH-fR-xhW"/>
+                                    <constraint firstAttribute="width" constant="130" id="uhw-ZI-qRS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                <state key="normal" title="Forgot Password?">
+                                    <color key="titleColor" red="0.21176470589999999" green="0.57647058819999997" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleForgotPassword" destination="j7V-vD-fnB" eventType="touchUpInside" id="EwQ-hM-Ll9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ksR-FS-ROU"/>
                         <color key="backgroundColor" red="0.8784313725490196" green="1" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="8y1-xQ-HX6" firstAttribute="top" secondItem="ksR-FS-ROU" secondAttribute="top" constant="75" id="1tc-5m-dJ2"/>
                             <constraint firstItem="E68-Y9-cNU" firstAttribute="leading" secondItem="ksR-FS-ROU" secondAttribute="leading" constant="16" id="BBM-Ld-rHP"/>
+                            <constraint firstItem="ksR-FS-ROU" firstAttribute="trailing" secondItem="Kbo-au-S32" secondAttribute="trailing" constant="16" id="CDI-O4-9M6"/>
                             <constraint firstItem="ksR-FS-ROU" firstAttribute="trailing" secondItem="WXB-UN-LtU" secondAttribute="trailing" constant="16" id="JG4-hC-RO3"/>
                             <constraint firstItem="aPI-Sb-ZYc" firstAttribute="leading" secondItem="ksR-FS-ROU" secondAttribute="leading" constant="16" id="NUF-B5-oCB"/>
                             <constraint firstItem="E68-Y9-cNU" firstAttribute="top" secondItem="WXB-UN-LtU" secondAttribute="bottom" constant="50" id="UCh-V6-edz"/>
+                            <constraint firstItem="Kbo-au-S32" firstAttribute="top" secondItem="E68-Y9-cNU" secondAttribute="bottom" constant="30" id="Wxn-Fx-H5Q"/>
                             <constraint firstItem="WXB-UN-LtU" firstAttribute="top" secondItem="aPI-Sb-ZYc" secondAttribute="bottom" constant="15" id="au8-ox-TCO"/>
                             <constraint firstItem="8y1-xQ-HX6" firstAttribute="leading" secondItem="ksR-FS-ROU" secondAttribute="leading" constant="16" id="ehm-Jh-82j"/>
                             <constraint firstItem="aPI-Sb-ZYc" firstAttribute="top" secondItem="8y1-xQ-HX6" secondAttribute="bottom" constant="70" id="iDV-BY-JGj"/>
@@ -105,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmT-Az-yj7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-276" y="703"/>
+            <point key="canvasLocation" x="-276.81159420289856" y="702.45535714285711"/>
         </scene>
         <!--Account-->
         <scene sceneID="FEA-ns-8Fb">

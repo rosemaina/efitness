@@ -61,6 +61,12 @@ class AccountScene: UIViewController {
         self.present(scene, animated: true, completion: nil)
     }
     
+    func presentRegistrationScene() {
+        let scene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterScene") as! RegisterScene
+        scene.modalPresentationStyle = .fullScreen
+        self.present(scene, animated: true, completion: nil)
+    }
+    
     func setupTable() {
         manageTable.delegate = self
         manageTable.dataSource = self
@@ -108,16 +114,27 @@ class AccountScene: UIViewController {
     }
     
     func deleteAccountAlert() {
-        let message = "Are you sure you want to delete your account?"
-        let alertController = UIAlertController(title: "Delete Account", message: message, preferredStyle: .alert)
+        let message = "Once you delete your account, there's no going back. Make sure you want to do it."
+        let alertController = UIAlertController(title: "Whoa, there!", message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let deleteAction = UIAlertAction(title: "Delete", style: .default) { _ in
-            print("account has been deleted successfully")
+        let deleteAction = UIAlertAction(title: "Yes, Delete It", style: .destructive) { [weak self] _ in
+            self?.deleteUserAccount()
         }
         
         alertController.addAction(cancelAction)
         alertController.addAction(deleteAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func deleteAccountSuccessAlert() {
+        let message = "Your account has been deleted successfully."
+        let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Done", style: .default) { [weak self] _ in
+            self?.presentRegistrationScene()
+        })
         
         self.present(alertController, animated: true, completion: nil)
     }
@@ -184,5 +201,25 @@ extension AccountScene: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+}
+
+// MARK: - Firebase Methods
+extension AccountScene {
+    func deleteUserAccount() {
+        Auth.auth().currentUser?.delete(completion: { (error) in
+            if let error = error as NSError? {
+                switch AuthErrorCode(rawValue: error.code) {
+                case .operationNotAllowed:
+                    self.presentErrorAlert(message: "Operation Not Allowed. Ensure email and password is correct.")
+                case .requiresRecentLogin:
+                    print("Reauthenticate user")
+                default:
+                    self.presentErrorAlert(message: "\(error.localizedDescription)")
+                }
+            } else {
+                self.deleteAccountSuccessAlert()
+            }
+        })
     }
 }

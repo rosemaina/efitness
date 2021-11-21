@@ -42,6 +42,32 @@ class LoginScene: UIViewController {
         self.presentRegistration()
     }
     
+    @IBAction func handleForgotPassword() {
+        let alertController = UIAlertController(title: "Reset Password", message: "", preferredStyle: .alert)
+        
+        alertController.addTextField { textfield in
+            textfield.placeholder = "Enter email"
+            textfield.keyboardType = .emailAddress
+            textfield.addDoneButtonOnKeyboard()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let resetPassword = UIAlertAction(title: "Reset Password", style: .default) { _ in
+            guard let emailTextfield = alertController.textFields?[0],
+                  let email = emailTextfield.text
+            else { return }
+            
+            self.resetPassword(with: email)
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(resetPassword)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
     // MARK: - Private Methods
 
     func clearTextfields() {
@@ -155,6 +181,10 @@ extension LoginScene {
                     self.presentActionSheet(message: "\(emailMsg) \n\(passwordMsg)")
                 }
             }.disposed(by: viewModel.disposeBag)
+        
+        viewModel.showTabBarScene.subscribe(onNext: { [weak self] _ in
+            self?.presentHomeTabBar()
+        }).disposed(by: viewModel.disposeBag)
     }
 }
 
@@ -183,8 +213,7 @@ extension LoginScene {
                     UserDefaults.standard.setValue(true, forKey: "userIsLoggedIn")
                     UserDefaults.standard.set(authResult?.user.uid, forKey: "USER_KEY_UID")
                     UserDefaults.standard.synchronize()
-                    
-                    self.presentHomeTabBar()
+
                     self.clearTextfields()
                 }
             }
@@ -205,6 +234,25 @@ extension LoginScene {
             }
         } else {
             self.presentErrorAlert(message: "User does not exist or is already verified.")
+        }
+    }
+    
+    private func resetPassword(with email: String) {
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if let error = error as NSError? {
+                switch AuthErrorCode(rawValue: error.code) {
+                case .userNotFound:
+                    self.presentErrorAlert(message: "Operation could not be completed. please contact system Admin.")
+                case .invalidEmail, .invalidRecipientEmail, .invalidSender:
+                    self.presentErrorAlert(message: "Email entered is not valid. Please check your email and try again.")
+                case .invalidMessagePayload:
+                    print("Indicates an invalid email template for sending update email.")
+                default:
+                    self.presentErrorAlert(message: "\(error.localizedDescription)")
+                }
+            } else {
+                self.presentSuccessAlert(message: "Reset password email has been successfully sent. Please check your inbox.")
+            }
         }
     }
 }

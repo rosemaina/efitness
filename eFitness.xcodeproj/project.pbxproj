@@ -14,7 +14,6 @@
 		1908B8D2274A3C2F00A99A10 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D1274A3C2F00A99A10 /* UILabel+.swift */; };
 		1908B8D4274A3C9C00A99A10 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D3274A3C9C00A99A10 /* UIButton+.swift */; };
 		1908B8D7274AA26500A99A10 /* AboutAppScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D6274AA26500A99A10 /* AboutAppScene.swift */; };
-		1908B8D9274AA27D00A99A10 /* ChangePasswordScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D8274AA27D00A99A10 /* ChangePasswordScene.swift */; };
 		19434C292749365700839CA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19434C282749365700839CA8 /* User.swift */; };
 		1955CB8C2738794E00A4C7AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB8B2738794E00A4C7AB /* String+.swift */; };
 		1955CB922739674500A4C7AB /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB912739674500A4C7AB /* CameraPreview.swift */; };
@@ -90,7 +89,6 @@
 		1908B8D1274A3C2F00A99A10 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		1908B8D3274A3C9C00A99A10 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		1908B8D6274AA26500A99A10 /* AboutAppScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppScene.swift; sourceTree = "<group>"; };
-		1908B8D8274AA27D00A99A10 /* ChangePasswordScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordScene.swift; sourceTree = "<group>"; };
 		19434C282749365700839CA8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1955CB8B2738794E00A4C7AB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		1955CB912739674500A4C7AB /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
@@ -186,9 +184,10 @@
 		1908B8C72749916B00A99A10 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				1908B8D5274AA23700A99A10 /* Manage */,
+				1908B8D6274AA26500A99A10 /* AboutAppScene.swift */,
 				19CD37E0272673E600474862 /* AccountScene.swift */,
 				1908B8CD274A3B5500A99A10 /* ManageAccountCell.swift */,
+				1908B8C527498C4800A99A10 /* ProfileScene.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -198,16 +197,6 @@
 			children = (
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		1908B8D5274AA23700A99A10 /* Manage */ = {
-			isa = PBXGroup;
-			children = (
-				1908B8C527498C4800A99A10 /* ProfileScene.swift */,
-				1908B8D6274AA26500A99A10 /* AboutAppScene.swift */,
-				1908B8D8274AA27D00A99A10 /* ChangePasswordScene.swift */,
-			);
-			path = Manage;
 			sourceTree = "<group>";
 		};
 		1966B986272063330030BBC9 = {
@@ -724,7 +713,6 @@
 				1908B8D0274A3BC900A99A10 /* CALayer+.swift in Sources */,
 				19FA3587272FAE2700110220 /* TextfieldValidator.swift in Sources */,
 				19434C292749365700839CA8 /* User.swift in Sources */,
-				1908B8D9274AA27D00A99A10 /* ChangePasswordScene.swift in Sources */,
 				19FA357F272F868F00110220 /* UITextField+.swift in Sources */,
 				1955CB8C2738794E00A4C7AB /* String+.swift in Sources */,
 				19FA3583272F871A00110220 /* UIColor+.swift in Sources */,
