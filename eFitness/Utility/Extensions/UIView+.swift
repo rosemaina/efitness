@@ -59,4 +59,12 @@ extension UIView {
         
         return view
     }
+    
+    static func createView(_ backgroundColor: UIColor = .white) -> UIView {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = backgroundColor
+
+        return view
+    }
 }

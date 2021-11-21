@@ -318,6 +318,89 @@
             </objects>
             <point key="canvasLocation" x="1285.5072463768117" y="702.45535714285711"/>
         </scene>
+        <!--About App Scene-->
+        <scene sceneID="VAo-DI-HrX">
+            <objects>
+                <viewController storyboardIdentifier="AboutAppScene" id="GW5-Hi-ulL" customClass="AboutAppScene" customModule="eFitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KNS-gc-1hl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7N-65-F1B">
+                                <rect key="frame" x="333" y="64" width="65" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="G8R-mP-gdW"/>
+                                    <constraint firstAttribute="height" constant="35" id="PWt-er-EdX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.0078431372550000003" green="0.49019607840000001" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnTapped" destination="2Pq-Mr-GUj" eventType="touchUpInside" id="9bW-h1-DFZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About eFitness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njh-he-sHr">
+                                <rect key="frame" x="16" y="109" width="382" height="29"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="23"/>
+                                <color key="textColor" red="0.0078431372550000003" green="0.49019607840000001" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Otw-7t-f3w">
+                                <rect key="frame" x="0.0" y="148" width="414" height="719"/>
+                                <color key="backgroundColor" red="0.90098208189999995" green="0.9990645051" blue="0.94385737179999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oZp-iP-JQb">
+                                    <size key="itemSize" width="414" height="307"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="KNS-gc-1hl" id="bkz-qu-pxq"/>
+                                    <outlet property="delegate" destination="KNS-gc-1hl" id="YYN-Qj-sdP"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BXf-FK-5vF"/>
+                        <color key="backgroundColor" red="0.89770007129999996" green="0.99912244080000001" blue="0.94750279189999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BXf-FK-5vF" firstAttribute="trailing" secondItem="njh-he-sHr" secondAttribute="trailing" constant="16" id="3MA-j3-nCh"/>
+                            <constraint firstItem="Z7N-65-F1B" firstAttribute="top" secondItem="BXf-FK-5vF" secondAttribute="top" constant="20" id="7gS-JL-9MY"/>
+                            <constraint firstItem="BXf-FK-5vF" firstAttribute="trailing" secondItem="Z7N-65-F1B" secondAttribute="trailing" constant="16" id="9Fd-dj-9E9"/>
+                            <constraint firstItem="Otw-7t-f3w" firstAttribute="top" secondItem="njh-he-sHr" secondAttribute="bottom" constant="10" id="Iab-X3-kde"/>
+                            <constraint firstItem="Otw-7t-f3w" firstAttribute="leading" secondItem="BXf-FK-5vF" secondAttribute="leading" id="IhC-ad-64T"/>
+                            <constraint firstItem="Otw-7t-f3w" firstAttribute="bottom" secondItem="BXf-FK-5vF" secondAttribute="bottom" constant="5" id="KXO-pU-Qgh"/>
+                            <constraint firstItem="Otw-7t-f3w" firstAttribute="trailing" secondItem="BXf-FK-5vF" secondAttribute="trailing" id="Th2-U2-TJx"/>
+                            <constraint firstItem="njh-he-sHr" firstAttribute="top" secondItem="Z7N-65-F1B" secondAttribute="bottom" constant="10" id="Z77-qx-iUP"/>
+                            <constraint firstItem="njh-he-sHr" firstAttribute="leading" secondItem="BXf-FK-5vF" secondAttribute="leading" constant="16" id="m1F-Wk-UxG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Otw-7t-f3w" id="ip2-8g-hh8"/>
+                        <outlet property="titleLabel" destination="njh-he-sHr" id="vTG-lG-9V5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hd6-yH-4nN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008.6956521739131" y="1891.7410714285713"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oaG-eA-nzU">
+            <objects>
+                <viewController id="IGL-yT-tfU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xOx-L3-gwQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tsV-C4-Ndf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HAW-Xf-pv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2005" y="1415"/>
+        </scene>
         <!--Profile Scene-->
         <scene sceneID="33i-dq-FsL">
             <objects>

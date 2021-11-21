@@ -14,6 +14,8 @@
 		1908B8D2274A3C2F00A99A10 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D1274A3C2F00A99A10 /* UILabel+.swift */; };
 		1908B8D4274A3C9C00A99A10 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D3274A3C9C00A99A10 /* UIButton+.swift */; };
 		1908B8D7274AA26500A99A10 /* AboutAppScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D6274AA26500A99A10 /* AboutAppScene.swift */; };
+		1908B8DB274AE39B00A99A10 /* AboutAppCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8DA274AE39B00A99A10 /* AboutAppCollectionCell.swift */; };
+		1908B8DD274AE8D400A99A10 /* AboutAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8DC274AE8D400A99A10 /* AboutAppViewModel.swift */; };
 		19434C292749365700839CA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19434C282749365700839CA8 /* User.swift */; };
 		1955CB8C2738794E00A4C7AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB8B2738794E00A4C7AB /* String+.swift */; };
 		1955CB922739674500A4C7AB /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB912739674500A4C7AB /* CameraPreview.swift */; };
@@ -89,6 +91,8 @@
 		1908B8D1274A3C2F00A99A10 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		1908B8D3274A3C9C00A99A10 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		1908B8D6274AA26500A99A10 /* AboutAppScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppScene.swift; sourceTree = "<group>"; };
+		1908B8DA274AE39B00A99A10 /* AboutAppCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppCollectionCell.swift; sourceTree = "<group>"; };
+		1908B8DC274AE8D400A99A10 /* AboutAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewModel.swift; sourceTree = "<group>"; };
 		19434C282749365700839CA8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1955CB8B2738794E00A4C7AB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		1955CB912739674500A4C7AB /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				19CD37E0272673E600474862 /* AccountScene.swift */,
 				1908B8CD274A3B5500A99A10 /* ManageAccountCell.swift */,
 				1908B8C527498C4800A99A10 /* ProfileScene.swift */,
+				1908B8DA274AE39B00A99A10 /* AboutAppCollectionCell.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				19CD37F62726E8D200474862 /* HomeViewModel.swift */,
 				19CD37EB2726D48F00474862 /* LoginViewModel.swift */,
 				19CD37EF2726DB1E00474862 /* RegisterViewModel.swift */,
+				1908B8DC274AE8D400A99A10 /* AboutAppViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -705,6 +711,7 @@
 				1908B8D7274AA26500A99A10 /* AboutAppScene.swift in Sources */,
 				19D849DD27436AB100992AFA /* AppError.swift in Sources */,
 				19CD37F02726DB1E00474862 /* RegisterViewModel.swift in Sources */,
+				1908B8DB274AE39B00A99A10 /* AboutAppCollectionCell.swift in Sources */,
 				19CD37EC2726D48F00474862 /* LoginViewModel.swift in Sources */,
 				1908B8D4274A3C9C00A99A10 /* UIButton+.swift in Sources */,
 				1966B9CE272067DC0030BBC9 /* RegisterScene.swift in Sources */,
@@ -712,6 +719,7 @@
 				1955CB922739674500A4C7AB /* CameraPreview.swift in Sources */,
 				1908B8D0274A3BC900A99A10 /* CALayer+.swift in Sources */,
 				19FA3587272FAE2700110220 /* TextfieldValidator.swift in Sources */,
+				1908B8DD274AE8D400A99A10 /* AboutAppViewModel.swift in Sources */,
 				19434C292749365700839CA8 /* User.swift in Sources */,
 				19FA357F272F868F00110220 /* UITextField+.swift in Sources */,
 				1955CB8C2738794E00A4C7AB /* String+.swift in Sources */,

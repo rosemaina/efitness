@@ -48,7 +48,9 @@ class AccountScene: UIViewController {
     }
     
     func presentAboutApp() {
-        print("Presenting About App")
+        let scene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AboutAppScene") as! AboutAppScene
+        scene.modalPresentationStyle = .fullScreen
+        self.present(scene, animated: true, completion: nil)
     }
     
     func presentChangePassword() {

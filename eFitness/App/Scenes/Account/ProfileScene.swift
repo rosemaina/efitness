@@ -87,23 +87,6 @@ class ProfileScene: UIViewController {
         })
     }
     
-//    func updateUserEmail(with email: String) {
-//        guard let currentUser = Auth.auth().currentUser else { return }
-//
-//        if !email.isEmpty {
-//            currentUser.updateEmail(to: email, completion: { [weak self] error in
-//                guard let self = self else { return }
-//
-//                if let error = error {
-//                    self.presentBaseErrorAlert(message: error.localizedDescription)
-//                } else {
-//                    let reference = self.roofReference.child("users").child(self.userID).child("email")
-//                    reference.setValue(email)
-//                }
-//            })
-//        }
-//    }
-    
     func updateProfileData() {
         guard  let viewModel = viewModel else { return }
         let rootRef = roofReference.child("users").child(userID)
