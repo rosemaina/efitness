@@ -9,7 +9,7 @@ import Firebase
 import RxCocoa
 import RxSwift
 
-class LoginViewModel {
+class LoginViewModel: BaseViewModel {
 
     // MARK: - Properties
     let disposeBag = DisposeBag()
@@ -30,7 +30,9 @@ class LoginViewModel {
     }()
     
     // MARK: - Initializer
-    init() {
+    override init() {
+        super.init()
+        
         self.validateInput()
     }
     

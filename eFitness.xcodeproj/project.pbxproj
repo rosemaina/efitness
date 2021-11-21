@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		0A7256C83A6A26AF3C3AFE02 /* Pods_eFitness_eFitnessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCCEBD2A1611541D72A96E45 /* Pods_eFitness_eFitnessUITests.framework */; };
 		1908B8C627498C4900A99A10 /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8C527498C4800A99A10 /* ProfileScene.swift */; };
+		1908B8CE274A3B5500A99A10 /* ManageAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8CD274A3B5500A99A10 /* ManageAccountCell.swift */; };
+		1908B8D0274A3BC900A99A10 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8CF274A3BC900A99A10 /* CALayer+.swift */; };
+		1908B8D2274A3C2F00A99A10 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D1274A3C2F00A99A10 /* UILabel+.swift */; };
+		1908B8D4274A3C9C00A99A10 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D3274A3C9C00A99A10 /* UIButton+.swift */; };
+		1908B8D7274AA26500A99A10 /* AboutAppScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D6274AA26500A99A10 /* AboutAppScene.swift */; };
+		1908B8D9274AA27D00A99A10 /* ChangePasswordScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D8274AA27D00A99A10 /* ChangePasswordScene.swift */; };
 		19434C292749365700839CA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19434C282749365700839CA8 /* User.swift */; };
 		1955CB8C2738794E00A4C7AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB8B2738794E00A4C7AB /* String+.swift */; };
 		1955CB922739674500A4C7AB /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB912739674500A4C7AB /* CameraPreview.swift */; };
@@ -79,6 +85,12 @@
 
 /* Begin PBXFileReference section */
 		1908B8C527498C4800A99A10 /* ProfileScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
+		1908B8CD274A3B5500A99A10 /* ManageAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAccountCell.swift; sourceTree = "<group>"; };
+		1908B8CF274A3BC900A99A10 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
+		1908B8D1274A3C2F00A99A10 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		1908B8D3274A3C9C00A99A10 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		1908B8D6274AA26500A99A10 /* AboutAppScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppScene.swift; sourceTree = "<group>"; };
+		1908B8D8274AA27D00A99A10 /* ChangePasswordScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordScene.swift; sourceTree = "<group>"; };
 		19434C282749365700839CA8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1955CB8B2738794E00A4C7AB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		1955CB912739674500A4C7AB /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
@@ -174,10 +186,28 @@
 		1908B8C72749916B00A99A10 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				1908B8D5274AA23700A99A10 /* Manage */,
 				19CD37E0272673E600474862 /* AccountScene.swift */,
-				1908B8C527498C4800A99A10 /* ProfileScene.swift */,
+				1908B8CD274A3B5500A99A10 /* ManageAccountCell.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		1908B8C8274A161700A99A10 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1908B8D5274AA23700A99A10 /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+				1908B8C527498C4800A99A10 /* ProfileScene.swift */,
+				1908B8D6274AA26500A99A10 /* AboutAppScene.swift */,
+				1908B8D8274AA27D00A99A10 /* ChangePasswordScene.swift */,
+			);
+			path = Manage;
 			sourceTree = "<group>";
 		};
 		1966B986272063330030BBC9 = {
@@ -206,10 +236,11 @@
 			isa = PBXGroup;
 			children = (
 				1966B9C2272067350030BBC9 /* App */,
-				1966B9A0272063360030BBC9 /* Info.plist */,
+				1908B8C8274A161700A99A10 /* Networking */,
 				1966B9CA2720679F0030BBC9 /* Resources */,
 				1966BA2F272078D50030BBC9 /* SupportFiles */,
 				1966BA3227207A240030BBC9 /* Utility */,
+				1966B9A0272063360030BBC9 /* Info.plist */,
 			);
 			path = eFitness;
 			sourceTree = "<group>";
@@ -332,6 +363,9 @@
 				19FA3582272F871A00110220 /* UIColor+.swift */,
 				19FA3588272FB60C00110220 /* UIView+.swift */,
 				1955CB8B2738794E00A4C7AB /* String+.swift */,
+				1908B8CF274A3BC900A99A10 /* CALayer+.swift */,
+				1908B8D1274A3C2F00A99A10 /* UILabel+.swift */,
+				1908B8D3274A3C9C00A99A10 /* UIButton+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -665,9 +699,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				19CD37F72726E8D200474862 /* HomeViewModel.swift in Sources */,
+				1908B8D2274A3C2F00A99A10 /* UILabel+.swift in Sources */,
 				19FA3581272F86D400110220 /* UIFont+.swift in Sources */,
 				19DBDB0F272ABF400045712F /* CameraScene.swift in Sources */,
 				19CD37E62726781B00474862 /* Constants.swift in Sources */,
+				1908B8CE274A3B5500A99A10 /* ManageAccountCell.swift in Sources */,
 				19FA3589272FB60C00110220 /* UIView+.swift in Sources */,
 				1955CB942739695800A4C7AB /* CustomCameraScene.swift in Sources */,
 				1966BA5A27209ECF0030BBC9 /* UIViewController+.swift in Sources */,
@@ -677,14 +713,18 @@
 				1966B993272063330030BBC9 /* AppDelegate.swift in Sources */,
 				19CD37EE2726D61700474862 /* BaseViewModel.swift in Sources */,
 				1966B995272063330030BBC9 /* SceneDelegate.swift in Sources */,
+				1908B8D7274AA26500A99A10 /* AboutAppScene.swift in Sources */,
 				19D849DD27436AB100992AFA /* AppError.swift in Sources */,
 				19CD37F02726DB1E00474862 /* RegisterViewModel.swift in Sources */,
 				19CD37EC2726D48F00474862 /* LoginViewModel.swift in Sources */,
+				1908B8D4274A3C9C00A99A10 /* UIButton+.swift in Sources */,
 				1966B9CE272067DC0030BBC9 /* RegisterScene.swift in Sources */,
 				1966B9D0272067EB0030BBC9 /* LoginScene.swift in Sources */,
 				1955CB922739674500A4C7AB /* CameraPreview.swift in Sources */,
+				1908B8D0274A3BC900A99A10 /* CALayer+.swift in Sources */,
 				19FA3587272FAE2700110220 /* TextfieldValidator.swift in Sources */,
 				19434C292749365700839CA8 /* User.swift in Sources */,
+				1908B8D9274AA27D00A99A10 /* ChangePasswordScene.swift in Sources */,
 				19FA357F272F868F00110220 /* UITextField+.swift in Sources */,
 				1955CB8C2738794E00A4C7AB /* String+.swift in Sources */,
 				19FA3583272F871A00110220 /* UIColor+.swift in Sources */,

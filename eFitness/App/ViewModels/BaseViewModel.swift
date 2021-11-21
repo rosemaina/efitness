@@ -7,13 +7,13 @@
 
 import Firebase
 
-class BaseViewModel {
+class BaseViewModel: NSObject {
     
-    let client: EfitnessClient
-    
-    init(client: EfitnessClient) {
-        self.client = client
+    var roofReference: DatabaseReference {
+        return  Database.database().reference()
     }
     
-    
+    override init() {
+        super.init()
+    }
 }

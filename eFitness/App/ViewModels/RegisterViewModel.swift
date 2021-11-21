@@ -8,7 +8,7 @@
 import RxCocoa
 import RxSwift
 
-class RegisterViewModel {
+class RegisterViewModel: BaseViewModel {
     
     // MARK: - Properties
     let disposeBag = DisposeBag()
@@ -33,7 +33,9 @@ class RegisterViewModel {
     }()
     
     // MARK: - Initializer
-    init() {
+    override init() {
+        super.init()
+        
         self.validateInput()
     }
     

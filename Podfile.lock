@@ -105,6 +105,7 @@ PODS:
   - RxRelay (5.1.3):
     - RxSwift (~> 5)
   - RxSwift (5.1.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -113,6 +114,7 @@ DEPENDENCIES:
   - RxCocoa (= 5.1.0)
   - RxDataSources (~> 4.0)
   - RxSwift (= 5.1.0)
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -135,6 +137,7 @@ SPEC REPOS:
     - RxDataSources
     - RxRelay
     - RxSwift
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
@@ -156,7 +159,8 @@ SPEC CHECKSUMS:
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 465034c7dbe4d9d3d788bec2d4c0b3f8cd4303e8
+PODFILE CHECKSUM: 26de1497d4f2fbea9c5471fbb5e282d46a1cd8b8
 
 COCOAPODS: 1.10.0

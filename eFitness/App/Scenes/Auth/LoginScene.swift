@@ -94,10 +94,11 @@ class LoginScene: UIViewController {
               let userID = Auth.auth().currentUser?.uid
         else { return }
         
-        reference.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+        roofReference.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
             if snapshot.exists() {
                 guard let response = snapshot.value as? [String: String] else { return }
                 viewModel.email.accept(response["email"] ?? "")
+                
                 self.emailTextField.text = viewModel.email.value
             }
         })

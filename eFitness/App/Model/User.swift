@@ -5,14 +5,12 @@
 //  Created by Rose Maina on 20/11/2021.
 //
 
-import Foundation
+import SwiftyJSON
 
-class User: NSObject {
-    var name: String?
-    var email: String?
-    
-    init(dictionary: [String: Any]) {
-        self.name = dictionary["name"] as? String ?? ""
-        self.email = dictionary["email"] as? String ?? ""
-    }
+struct User: Codable {
+    var name, email, username, age, height, weight: String
+}
+
+struct UserProgram: Codable {
+    var name, dateTime, feedaback: String
 }

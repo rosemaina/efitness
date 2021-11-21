@@ -38,8 +38,13 @@ extension UIViewController {
 }
 
 extension UIViewController {
-    var reference: DatabaseReference {
+    var roofReference: DatabaseReference {
         return  Database.database().reference()
+    }
+    
+    var userID: String {
+        guard let userId = Auth.auth().currentUser?.uid  else { return "" }
+        return  userId
     }
 }
 
