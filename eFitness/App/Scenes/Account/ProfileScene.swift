@@ -12,7 +12,7 @@ import UIKit
 class ProfileScene: UIViewController {
     
     // MARK: - Public Properties
-    var viewModel: HomeViewModel?
+    var viewModel: AccountViewModel?
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var updateProfileButton: UIButton!
@@ -23,7 +23,6 @@ class ProfileScene: UIViewController {
     @IBOutlet weak var weightTextfield: UITextField!
     
     @IBOutlet weak var avatarImage: UIImageView!
-    @IBOutlet weak var salutationLabel: UILabel!
     
     // MARK: - Ovveride Methods
     override func viewDidLoad() {
@@ -43,7 +42,7 @@ class ProfileScene: UIViewController {
     }
     
     func configureViews() {
-        viewModel = HomeViewModel()
+        viewModel = AccountViewModel()
         
         updateProfileButton.addCornerRadiusAndShadow()
         
@@ -57,7 +56,6 @@ class ProfileScene: UIViewController {
         weightTextfield.addDoneButtonOnKeyboard()
         
         hideKeyboard()
-        setupSalutationText()
     }
     
     func presentAccountScene() {
@@ -74,17 +72,6 @@ class ProfileScene: UIViewController {
             self.presentAccountScene()
         }))
         self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func setupSalutationText() {
-        self.roofReference.child("users").child(userID).observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
-            if snapshot.exists() {
-                guard let self = self, let response = snapshot.value as? [String: String] else { return }
-                self.viewModel?.salutationText.accept("Hello, \(response["username"] ?? "there" )!")
-                self.viewModel?.email.accept(response["email"] ?? "")
-                self.salutationLabel.text = self.viewModel?.salutationText.value
-            }
-        })
     }
     
     func updateProfileData() {

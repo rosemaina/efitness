@@ -12,7 +12,7 @@ import UIKit
 class AccountScene: UIViewController {
     
     // MARK: - Public Properties
-    var viewModel: HomeViewModel?
+    var viewModel: AccountViewModel?
     
     @IBOutlet weak var salutationLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -34,7 +34,7 @@ class AccountScene: UIViewController {
     
     // MARK: - Instance Methods
     func configureViews()  {
-        viewModel = HomeViewModel()
+        viewModel = AccountViewModel()
         setupView()
     }
 

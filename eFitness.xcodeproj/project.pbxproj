@@ -16,6 +16,8 @@
 		1908B8D7274AA26500A99A10 /* AboutAppScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8D6274AA26500A99A10 /* AboutAppScene.swift */; };
 		1908B8DB274AE39B00A99A10 /* AboutAppCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8DA274AE39B00A99A10 /* AboutAppCollectionCell.swift */; };
 		1908B8DD274AE8D400A99A10 /* AboutAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8DC274AE8D400A99A10 /* AboutAppViewModel.swift */; };
+		190D947C27512FCA00E94242 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190D947B27512FCA00E94242 /* HomeScene.swift */; };
+		190D947E275130F900E94242 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190D947D275130F900E94242 /* HomeViewModel.swift */; };
 		19434C292749365700839CA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19434C282749365700839CA8 /* User.swift */; };
 		1955CB8C2738794E00A4C7AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB8B2738794E00A4C7AB /* String+.swift */; };
 		1955CB922739674500A4C7AB /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB912739674500A4C7AB /* CameraPreview.swift */; };
@@ -55,7 +57,7 @@
 		19CD37F02726DB1E00474862 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37EF2726DB1E00474862 /* RegisterViewModel.swift */; };
 		19CD37F22726E71400474862 /* EfitnessClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37F12726E71400474862 /* EfitnessClient.swift */; };
 		19CD37F52726E76700474862 /* FeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37F42726E76700474862 /* FeedbackModel.swift */; };
-		19CD37F72726E8D200474862 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37F62726E8D200474862 /* HomeViewModel.swift */; };
+		19CD37F72726E8D200474862 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37F62726E8D200474862 /* AccountViewModel.swift */; };
 		19D849DD27436AB100992AFA /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D849DC27436AB100992AFA /* AppError.swift */; };
 		19DBDB0F272ABF400045712F /* CameraScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DBDB0E272ABF400045712F /* CameraScene.swift */; };
 		19FA357F272F868F00110220 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA357E272F868F00110220 /* UITextField+.swift */; };
@@ -93,6 +95,8 @@
 		1908B8D6274AA26500A99A10 /* AboutAppScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppScene.swift; sourceTree = "<group>"; };
 		1908B8DA274AE39B00A99A10 /* AboutAppCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppCollectionCell.swift; sourceTree = "<group>"; };
 		1908B8DC274AE8D400A99A10 /* AboutAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewModel.swift; sourceTree = "<group>"; };
+		190D947B27512FCA00E94242 /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		190D947D275130F900E94242 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		19434C282749365700839CA8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1955CB8B2738794E00A4C7AB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		1955CB912739674500A4C7AB /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
@@ -138,7 +142,7 @@
 		19CD37EF2726DB1E00474862 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		19CD37F12726E71400474862 /* EfitnessClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EfitnessClient.swift; sourceTree = "<group>"; };
 		19CD37F42726E76700474862 /* FeedbackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackModel.swift; sourceTree = "<group>"; };
-		19CD37F62726E8D200474862 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		19CD37F62726E8D200474862 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		19D849DC27436AB100992AFA /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		19DBDB0E272ABF400045712F /* CameraScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScene.swift; sourceTree = "<group>"; };
 		19FA357E272F868F00110220 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
@@ -203,6 +207,15 @@
 				1908B8CD274A3B5500A99A10 /* ManageAccountCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		190D947A27512FB200E94242 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				19CD37DD272673C000474862 /* Camera */,
+				190D947B27512FCA00E94242 /* HomeScene.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		1966B986272063330030BBC9 = {
@@ -376,10 +389,11 @@
 			isa = PBXGroup;
 			children = (
 				19CD37ED2726D61700474862 /* BaseViewModel.swift */,
-				19CD37F62726E8D200474862 /* HomeViewModel.swift */,
+				19CD37F62726E8D200474862 /* AccountViewModel.swift */,
 				19CD37EB2726D48F00474862 /* LoginViewModel.swift */,
 				19CD37EF2726DB1E00474862 /* RegisterViewModel.swift */,
 				1908B8DC274AE8D400A99A10 /* AboutAppViewModel.swift */,
+				190D947D275130F900E94242 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -398,7 +412,7 @@
 			children = (
 				1908B8C72749916B00A99A10 /* Account */,
 				1966B9CC272067C90030BBC9 /* Auth */,
-				19CD37DD272673C000474862 /* Camera */,
+				190D947A27512FB200E94242 /* Home */,
 				1966B9CB272067B70030BBC9 /* Storyboards */,
 			);
 			path = Scenes;
@@ -693,7 +707,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19CD37F72726E8D200474862 /* HomeViewModel.swift in Sources */,
+				19CD37F72726E8D200474862 /* AccountViewModel.swift in Sources */,
 				1908B8D2274A3C2F00A99A10 /* UILabel+.swift in Sources */,
 				19FA3581272F86D400110220 /* UIFont+.swift in Sources */,
 				19DBDB0F272ABF400045712F /* CameraScene.swift in Sources */,
@@ -710,6 +724,7 @@
 				1966B995272063330030BBC9 /* SceneDelegate.swift in Sources */,
 				1908B8D7274AA26500A99A10 /* AboutAppScene.swift in Sources */,
 				19D849DD27436AB100992AFA /* AppError.swift in Sources */,
+				190D947E275130F900E94242 /* HomeViewModel.swift in Sources */,
 				19CD37F02726DB1E00474862 /* RegisterViewModel.swift in Sources */,
 				1908B8DB274AE39B00A99A10 /* AboutAppCollectionCell.swift in Sources */,
 				19CD37EC2726D48F00474862 /* LoginViewModel.swift in Sources */,
@@ -723,6 +738,7 @@
 				19434C292749365700839CA8 /* User.swift in Sources */,
 				19FA357F272F868F00110220 /* UITextField+.swift in Sources */,
 				1955CB8C2738794E00A4C7AB /* String+.swift in Sources */,
+				190D947C27512FCA00E94242 /* HomeScene.swift in Sources */,
 				19FA3583272F871A00110220 /* UIColor+.swift in Sources */,
 				1908B8C627498C4900A99A10 /* ProfileScene.swift in Sources */,
 			);
