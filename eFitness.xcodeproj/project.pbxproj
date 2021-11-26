@@ -18,9 +18,14 @@
 		1908B8DD274AE8D400A99A10 /* AboutAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1908B8DC274AE8D400A99A10 /* AboutAppViewModel.swift */; };
 		190D947C27512FCA00E94242 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190D947B27512FCA00E94242 /* HomeScene.swift */; };
 		190D947E275130F900E94242 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190D947D275130F900E94242 /* HomeViewModel.swift */; };
+		190D948427515AB300E94242 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190D948327515AB300E94242 /* ContentView.swift */; };
+		190D948627515AD300E94242 /* StickFigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190D948527515AD300E94242 /* StickFigureView.swift */; };
+		190D948827515B3A00E94242 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190D948727515B3A00E94242 /* Shapes.swift */; };
+		190D948C27515ED000E94242 /* WorkoutCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190D948B27515ED000E94242 /* WorkoutCounter.swift */; };
+		190D948E275183AB00E94242 /* CameraViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190D948D275183AB00E94242 /* CameraViewWrapper.swift */; };
 		19434C292749365700839CA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19434C282749365700839CA8 /* User.swift */; };
 		1955CB8C2738794E00A4C7AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB8B2738794E00A4C7AB /* String+.swift */; };
-		1955CB922739674500A4C7AB /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB912739674500A4C7AB /* CameraPreview.swift */; };
+		1955CB922739674500A4C7AB /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB912739674500A4C7AB /* CameraView.swift */; };
 		1955CB942739695800A4C7AB /* CustomCameraScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1955CB932739695800A4C7AB /* CustomCameraScene.swift */; };
 		1966B993272063330030BBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966B992272063330030BBC9 /* AppDelegate.swift */; };
 		1966B995272063330030BBC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966B994272063330030BBC9 /* SceneDelegate.swift */; };
@@ -56,7 +61,7 @@
 		19CD37EE2726D61700474862 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37ED2726D61700474862 /* BaseViewModel.swift */; };
 		19CD37F02726DB1E00474862 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37EF2726DB1E00474862 /* RegisterViewModel.swift */; };
 		19CD37F22726E71400474862 /* EfitnessClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37F12726E71400474862 /* EfitnessClient.swift */; };
-		19CD37F52726E76700474862 /* FeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37F42726E76700474862 /* FeedbackModel.swift */; };
+		19CD37F52726E76700474862 /* PoseEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37F42726E76700474862 /* PoseEstimator.swift */; };
 		19CD37F72726E8D200474862 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD37F62726E8D200474862 /* AccountViewModel.swift */; };
 		19D849DD27436AB100992AFA /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D849DC27436AB100992AFA /* AppError.swift */; };
 		19DBDB0F272ABF400045712F /* CameraScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DBDB0E272ABF400045712F /* CameraScene.swift */; };
@@ -97,9 +102,14 @@
 		1908B8DC274AE8D400A99A10 /* AboutAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewModel.swift; sourceTree = "<group>"; };
 		190D947B27512FCA00E94242 /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		190D947D275130F900E94242 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		190D948327515AB300E94242 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		190D948527515AD300E94242 /* StickFigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickFigureView.swift; sourceTree = "<group>"; };
+		190D948727515B3A00E94242 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		190D948B27515ED000E94242 /* WorkoutCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCounter.swift; sourceTree = "<group>"; };
+		190D948D275183AB00E94242 /* CameraViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewWrapper.swift; sourceTree = "<group>"; };
 		19434C282749365700839CA8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1955CB8B2738794E00A4C7AB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
-		1955CB912739674500A4C7AB /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		1955CB912739674500A4C7AB /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		1955CB932739695800A4C7AB /* CustomCameraScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraScene.swift; sourceTree = "<group>"; };
 		1966B98F272063330030BBC9 /* eFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1966B992272063330030BBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +151,7 @@
 		19CD37ED2726D61700474862 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		19CD37EF2726DB1E00474862 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		19CD37F12726E71400474862 /* EfitnessClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EfitnessClient.swift; sourceTree = "<group>"; };
-		19CD37F42726E76700474862 /* FeedbackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackModel.swift; sourceTree = "<group>"; };
+		19CD37F42726E76700474862 /* PoseEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseEstimator.swift; sourceTree = "<group>"; };
 		19CD37F62726E8D200474862 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		19D849DC27436AB100992AFA /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		19DBDB0E272ABF400045712F /* CameraScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScene.swift; sourceTree = "<group>"; };
@@ -216,6 +226,17 @@
 				190D947B27512FCA00E94242 /* HomeScene.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		190D947F27515A6C00E94242 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				190D948327515AB300E94242 /* ContentView.swift */,
+				190D948527515AD300E94242 /* StickFigureView.swift */,
+				190D948727515B3A00E94242 /* Shapes.swift */,
+				190D948B27515ED000E94242 /* WorkoutCounter.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1966B986272063330030BBC9 = {
@@ -354,8 +375,10 @@
 		19CD37DD272673C000474862 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				190D947F27515A6C00E94242 /* Views */,
 				19DBDB0E272ABF400045712F /* CameraScene.swift */,
-				1955CB912739674500A4C7AB /* CameraPreview.swift */,
+				1955CB912739674500A4C7AB /* CameraView.swift */,
+				190D948D275183AB00E94242 /* CameraViewWrapper.swift */,
 				1955CB932739695800A4C7AB /* CustomCameraScene.swift */,
 			);
 			path = Camera;
@@ -401,7 +424,7 @@
 		19CD37F32726E74B00474862 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				19CD37F42726E76700474862 /* FeedbackModel.swift */,
+				19CD37F42726E76700474862 /* PoseEstimator.swift */,
 				19434C282749365700839CA8 /* User.swift */,
 			);
 			path = Model;
@@ -716,22 +739,26 @@
 				19FA3589272FB60C00110220 /* UIView+.swift in Sources */,
 				1955CB942739695800A4C7AB /* CustomCameraScene.swift in Sources */,
 				1966BA5A27209ECF0030BBC9 /* UIViewController+.swift in Sources */,
-				19CD37F52726E76700474862 /* FeedbackModel.swift in Sources */,
+				19CD37F52726E76700474862 /* PoseEstimator.swift in Sources */,
 				19CD37E1272673E600474862 /* AccountScene.swift in Sources */,
 				19CD37F22726E71400474862 /* EfitnessClient.swift in Sources */,
 				1966B993272063330030BBC9 /* AppDelegate.swift in Sources */,
 				19CD37EE2726D61700474862 /* BaseViewModel.swift in Sources */,
 				1966B995272063330030BBC9 /* SceneDelegate.swift in Sources */,
 				1908B8D7274AA26500A99A10 /* AboutAppScene.swift in Sources */,
+				190D948427515AB300E94242 /* ContentView.swift in Sources */,
 				19D849DD27436AB100992AFA /* AppError.swift in Sources */,
 				190D947E275130F900E94242 /* HomeViewModel.swift in Sources */,
+				190D948627515AD300E94242 /* StickFigureView.swift in Sources */,
 				19CD37F02726DB1E00474862 /* RegisterViewModel.swift in Sources */,
 				1908B8DB274AE39B00A99A10 /* AboutAppCollectionCell.swift in Sources */,
 				19CD37EC2726D48F00474862 /* LoginViewModel.swift in Sources */,
+				190D948827515B3A00E94242 /* Shapes.swift in Sources */,
 				1908B8D4274A3C9C00A99A10 /* UIButton+.swift in Sources */,
 				1966B9CE272067DC0030BBC9 /* RegisterScene.swift in Sources */,
+				190D948E275183AB00E94242 /* CameraViewWrapper.swift in Sources */,
 				1966B9D0272067EB0030BBC9 /* LoginScene.swift in Sources */,
-				1955CB922739674500A4C7AB /* CameraPreview.swift in Sources */,
+				1955CB922739674500A4C7AB /* CameraView.swift in Sources */,
 				1908B8D0274A3BC900A99A10 /* CALayer+.swift in Sources */,
 				19FA3587272FAE2700110220 /* TextfieldValidator.swift in Sources */,
 				1908B8DD274AE8D400A99A10 /* AboutAppViewModel.swift in Sources */,
@@ -739,6 +766,7 @@
 				19FA357F272F868F00110220 /* UITextField+.swift in Sources */,
 				1955CB8C2738794E00A4C7AB /* String+.swift in Sources */,
 				190D947C27512FCA00E94242 /* HomeScene.swift in Sources */,
+				190D948C27515ED000E94242 /* WorkoutCounter.swift in Sources */,
 				19FA3583272F871A00110220 /* UIColor+.swift in Sources */,
 				1908B8C627498C4900A99A10 /* ProfileScene.swift in Sources */,
 			);

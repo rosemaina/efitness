@@ -5,9 +5,10 @@
 //  Created by Rose Maina on 26/11/2021.
 //
 
-import UIKit
 import RxSwift
 import RxCocoa
+import SwiftUI
+import UIKit
 
 class HomeScene: UIViewController {
     // MARK: - Instance Properties
@@ -24,9 +25,9 @@ class HomeScene: UIViewController {
 
     // MARK: - Public Instance Methods
     @IBAction func presentCameraScene() {
-        let scene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CameraScene") as! CameraScene
-        scene.modalPresentationStyle = .fullScreen
-        self.present(scene, animated: true, completion: nil)
+        let childView = UIHostingController(rootView: ContentView())
+        childView.modalPresentationStyle = .fullScreen
+        self.present(childView, animated: true, completion: nil)
     }
     
     func configureViews() {
