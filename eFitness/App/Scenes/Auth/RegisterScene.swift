@@ -121,7 +121,7 @@ extension RegisterScene {
                 if passwordMsg.isEmpty && emailMsg.isEmpty && usernameMsg.isEmpty {
                     self.registerUser(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "", username: self.usernameTextField.text ?? "")
                 } else {
-                    self.presentActionSheet(message: "1. \(emailMsg) \n2. \(passwordMsg) \n3. \(usernameMsg)")
+                    self.presentActionSheet(message: "\(emailMsg) \n\(passwordMsg) \n\(usernameMsg)")
                 }
             }.disposed(by: viewModel.disposeBag)
     }
@@ -141,7 +141,7 @@ extension RegisterScene {
                 case .invalidEmail:
                     self.presentErrorAlert(message: "Invalid Email. Check if your email is correct.")
                 case .weakPassword:
-                    self.presentErrorAlert(message: "Password should be 8 or more characters. Include number, special character, small leeter and capital letter.")
+                    self.presentErrorAlert(message: "Password should be 8 or more. Include aplhanumerics and special characters for a stronger password.")
                 default:
                     self.presentErrorAlert(message: "\(error.localizedDescription)")
                 }

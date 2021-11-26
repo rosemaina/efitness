@@ -39,9 +39,7 @@ class LoginViewModel: BaseViewModel {
     // MARK: - Public Methods
     private func validateInput() {
         Observable
-            .combineLatest(email.asObservable(),
-                           password.asObservable())
-            { [weak self] email, password in
+            .combineLatest(email.asObservable(), password.asObservable()) { [weak self] email, password in
                 guard let self = self else  { return }
                 self.onscreenEmail = email
                 self.onscreenPassword = password
@@ -74,7 +72,7 @@ class LoginViewModel: BaseViewModel {
         let isPasswordValid = self.validator.isPasswordValid(onscreenPassword)
     
         if !isPasswordValid {
-            message = "Password should contain 8-10 characters, uppercase letter, lowercase letter, number and special character."
+            message = "Password should be 8 or more, Include alphanumeris and special characters for a strong password."
         }
         
         passwordAlertMessage = message

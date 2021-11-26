@@ -14,7 +14,8 @@ class AboutAppScene: UIViewController {
     private let spacing: CGFloat = 10.0
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var contentTable: UITableView!
+    @IBOutlet weak var backButton: UIButton!
     
     // MARK: - Ovveride Methods
     override func viewDidLoad() {
@@ -23,49 +24,57 @@ class AboutAppScene: UIViewController {
     }
     
     // MARK: - Instance Methods
-    func configureViews() {
-        viewModel = AboutAppViewModel()
-        
-        setupCollectionView()
+    @IBAction func backBtnTapped() {
+        presentAccountScene()
     }
     
-    fileprivate func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        collectionView.register(AboutAppCollectionCell.self, forCellWithReuseIdentifier: AboutAppCollectionCell.identifier)
+    func configureViews() {
+        viewModel = AboutAppViewModel()
+        setupTable()
+    }
+    
+    func presentAccountScene() {
+        let tabVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainTabBarController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootVC(tabVC)
+    }
+    
+    func setupTable() {
+        contentTable.delegate = self
+        contentTable.dataSource = self
+        contentTable.separatorStyle = .none
+        contentTable.tableFooterView = UIView()
+        contentTable.showsVerticalScrollIndicator = false
+        contentTable.backgroundColor = Colors.backgroundGreen
+        contentTable.register(AboutAppCollectionCell.self, forCellReuseIdentifier: AboutAppCollectionCell.identifier)
     }
 }
 
-// MARK: -  Collection View Data Source and Delegate Methods
-extension AboutAppScene: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+// MARK: - TableView Methods
+extension AboutAppScene: UITableViewDataSource, UITableViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.bounds.width - 50), height: 400)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return spacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return spacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel?.detailsList.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AboutAppCollectionCell.identifier, for: indexPath) as? AboutAppCollectionCell else {
-            return UICollectionViewCell()
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: AboutAppCollectionCell.identifier, for: indexPath) as? AboutAppCollectionCell,
+            let viewModel = viewModel
+        else { return UITableViewCell() }
         
-        guard let viewModel = viewModel else { return UICollectionViewCell() }
-        let info = viewModel.detailsList[indexPath.row].info
-        cell.aboutImage.image = info.image
-        cell.titleLabel.text = info.text
+                let info = viewModel.detailsList[indexPath.section].info
+                cell.aboutImage.image = info.image
+                cell.titleLabel.text = info.text
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
 }

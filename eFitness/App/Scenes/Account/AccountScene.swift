@@ -53,10 +53,6 @@ class AccountScene: UIViewController {
         self.present(scene, animated: true, completion: nil)
     }
     
-    func presentChangePassword() {
-        print("Presenting Change Password")
-    }
-    
     func presentEditProfile() {
         let scene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileScene") as! ProfileScene
         scene.modalPresentationStyle = .fullScreen
@@ -86,6 +82,8 @@ class AccountScene: UIViewController {
         let confirmAction = UIAlertAction(title: "OK", style: .default) { _ in
             do {
                 try Auth.auth().signOut()
+                UserDefaults.standard.setValue(false, forKey: "userIsLoggedIn")
+                
                 let scene = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "LoginScene")
                 scene.modalPresentationStyle = .fullScreen
                 self.present(scene, animated: true, completion: nil)
@@ -191,7 +189,7 @@ extension AccountScene: UITableViewDataSource, UITableViewDelegate {
         case .editProfile:
             self.presentEditProfile()
         case .changePassword:
-            self.presentChangePassword()
+            self.resetPassword(with: viewModel.email.value)
         case .aboutApp:
             self.presentAboutApp()
         case .logout:
@@ -208,6 +206,8 @@ extension AccountScene: UITableViewDataSource, UITableViewDelegate {
 
 // MARK: - Firebase Methods
 extension AccountScene {
+    
+    /// Delete User Account
     func deleteUserAccount() {
         Auth.auth().currentUser?.delete(completion: { (error) in
             if let error = error as NSError? {
@@ -220,8 +220,29 @@ extension AccountScene {
                     self.presentErrorAlert(message: "\(error.localizedDescription)")
                 }
             } else {
+                UserDefaults.standard.setValue(false, forKey: "userIsLoggedIn")
                 self.deleteAccountSuccessAlert()
             }
         })
+    }
+    
+    /// Reset User Password
+    private func resetPassword(with email: String) {
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if let error = error as NSError? {
+                switch AuthErrorCode(rawValue: error.code) {
+                case .userNotFound:
+                    self.presentErrorAlert(message: "Something went wrong. Try again later.")
+                case .invalidEmail, .invalidRecipientEmail, .invalidSender:
+                    self.presentErrorAlert(message: "Email entered is not valid. Please check your email and try again.")
+                case .invalidMessagePayload:
+                    print("Indicates an invalid email template for sending update email.")
+                default:
+                    self.presentErrorAlert(message: "\(error.localizedDescription)")
+                }
+            } else {
+                self.presentSuccessAlert(message: "Reset password email has been successfully sent. Please check your inbox.")
+            }
+        }
     }
 }

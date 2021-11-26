@@ -14,7 +14,6 @@ class LoginScene: UIViewController {
     
     // MARK: - Instance Properties
     var viewModel: LoginViewModel?
-    var handle: AuthStateDidChangeListenerHandle?
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -30,10 +29,10 @@ class LoginScene: UIViewController {
         super.viewWillAppear(animated)
         viewModel?.addStateDidCHangeListener()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        guard let handle = handle else { return }
+        guard let handle = viewModel?.handle else { return }
         Auth.auth().removeStateDidChangeListener(handle)
     }
     
@@ -155,7 +154,7 @@ extension LoginScene {
         viewModel
             .enableLoginAction
             .asDriver()
-            .do(onNext: {value in
+            .do(onNext: { value in
                 let color = value ? Colors.darkGreen : Colors.inactiveGray
                 self.loginButton.backgroundColor = color
             })
@@ -191,6 +190,7 @@ extension LoginScene {
 // MARK: - Firebase Methods
 extension LoginScene {
     
+    /// Login a User to the app
     private func loginUser(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             guard let self = self else { return }
@@ -213,13 +213,15 @@ extension LoginScene {
                     UserDefaults.standard.setValue(true, forKey: "userIsLoggedIn")
                     UserDefaults.standard.set(authResult?.user.uid, forKey: "USER_KEY_UID")
                     UserDefaults.standard.synchronize()
-
+                    
+                    self.presentHomeTabBar()
                     self.clearTextfields()
                 }
             }
         }
     }
     
+    /// Send an email verification Link to User
     private func sendVerificationEmail(_ authResult: AuthDataResult?) {
         guard let currentUser = authResult?.user else { return }
         UserDefaults.standard.setValue(false, forKey: "isEmailVerified")
@@ -237,12 +239,13 @@ extension LoginScene {
         }
     }
     
+    /// Reset User Password
     private func resetPassword(with email: String) {
         Auth.auth().sendPasswordReset(withEmail: email) { (error) in
             if let error = error as NSError? {
                 switch AuthErrorCode(rawValue: error.code) {
                 case .userNotFound:
-                    self.presentErrorAlert(message: "Operation could not be completed. please contact system Admin.")
+                    self.presentErrorAlert(message: "Something went wrong. Try again later.")
                 case .invalidEmail, .invalidRecipientEmail, .invalidSender:
                     self.presentErrorAlert(message: "Email entered is not valid. Please check your email and try again.")
                 case .invalidMessagePayload:

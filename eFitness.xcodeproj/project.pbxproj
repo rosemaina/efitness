@@ -188,20 +188,21 @@
 		1908B8C72749916B00A99A10 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				190D947927510A8D00E94242 /* Views */,
 				1908B8D6274AA26500A99A10 /* AboutAppScene.swift */,
 				19CD37E0272673E600474862 /* AccountScene.swift */,
-				1908B8CD274A3B5500A99A10 /* ManageAccountCell.swift */,
 				1908B8C527498C4800A99A10 /* ProfileScene.swift */,
-				1908B8DA274AE39B00A99A10 /* AboutAppCollectionCell.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
 		};
-		1908B8C8274A161700A99A10 /* Networking */ = {
+		190D947927510A8D00E94242 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1908B8DA274AE39B00A99A10 /* AboutAppCollectionCell.swift */,
+				1908B8CD274A3B5500A99A10 /* ManageAccountCell.swift */,
 			);
-			path = Networking;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1966B986272063330030BBC9 = {
@@ -230,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				1966B9C2272067350030BBC9 /* App */,
-				1908B8C8274A161700A99A10 /* Networking */,
 				1966B9CA2720679F0030BBC9 /* Resources */,
 				1966BA2F272078D50030BBC9 /* SupportFiles */,
 				1966BA3227207A240030BBC9 /* Utility */,

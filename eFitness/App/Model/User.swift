@@ -6,11 +6,11 @@
 //
 
 import SwiftyJSON
-
-struct User: Codable {
-    var name, email, username, age, height, weight: String
-}
-
-struct UserProgram: Codable {
-    var name, dateTime, feedaback: String
-}
+//
+//struct User: Codable {
+//    var name, email, username, age, height, weight: String
+//}
+//
+//struct UserProgram: Codable {
+//    var name, dateTime, feedaback: String
+//}

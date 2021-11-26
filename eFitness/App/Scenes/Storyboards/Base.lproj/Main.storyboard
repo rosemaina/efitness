@@ -115,7 +115,7 @@
                     <navigationItem key="navigationItem" id="uzN-p8-E22"/>
                     <connections>
                         <outlet property="emailTextField" destination="aPI-Sb-ZYc" id="zPE-6g-dkv"/>
-                        <outlet property="loginButton" destination="E68-Y9-cNU" id="JBe-wT-GZJ"/>
+                        <outlet property="loginButton" destination="E68-Y9-cNU" id="Vgr-R5-ecc"/>
                         <outlet property="passwordTextField" destination="WXB-UN-LtU" id="ksU-Bs-ZzM"/>
                     </connections>
                 </viewController>
@@ -339,6 +339,7 @@
                                 </state>
                                 <connections>
                                     <action selector="backBtnTapped" destination="2Pq-Mr-GUj" eventType="touchUpInside" id="9bW-h1-DFZ"/>
+                                    <action selector="backBtnTapped" destination="GW5-Hi-ulL" eventType="touchUpInside" id="WaZ-wc-eAY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About eFitness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njh-he-sHr">
@@ -347,21 +348,14 @@
                                 <color key="textColor" red="0.0078431372550000003" green="0.49019607840000001" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Otw-7t-f3w">
-                                <rect key="frame" x="0.0" y="148" width="414" height="719"/>
-                                <color key="backgroundColor" red="0.90098208189999995" green="0.9990645051" blue="0.94385737179999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oZp-iP-JQb">
-                                    <size key="itemSize" width="414" height="307"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ae1-9t-ibm">
+                                <rect key="frame" x="10" y="163" width="394" height="689"/>
+                                <color key="backgroundColor" red="0.8814023137" green="0.99923664329999995" blue="0.95489794019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="KNS-gc-1hl" id="bkz-qu-pxq"/>
-                                    <outlet property="delegate" destination="KNS-gc-1hl" id="YYN-Qj-sdP"/>
+                                    <outlet property="dataSource" destination="KNS-gc-1hl" id="wEO-xV-Dv5"/>
+                                    <outlet property="delegate" destination="KNS-gc-1hl" id="ZBt-1S-qIm"/>
                                 </connections>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BXf-FK-5vF"/>
                         <color key="backgroundColor" red="0.89770007129999996" green="0.99912244080000001" blue="0.94750279189999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -369,37 +363,23 @@
                             <constraint firstItem="BXf-FK-5vF" firstAttribute="trailing" secondItem="njh-he-sHr" secondAttribute="trailing" constant="16" id="3MA-j3-nCh"/>
                             <constraint firstItem="Z7N-65-F1B" firstAttribute="top" secondItem="BXf-FK-5vF" secondAttribute="top" constant="20" id="7gS-JL-9MY"/>
                             <constraint firstItem="BXf-FK-5vF" firstAttribute="trailing" secondItem="Z7N-65-F1B" secondAttribute="trailing" constant="16" id="9Fd-dj-9E9"/>
-                            <constraint firstItem="Otw-7t-f3w" firstAttribute="top" secondItem="njh-he-sHr" secondAttribute="bottom" constant="10" id="Iab-X3-kde"/>
-                            <constraint firstItem="Otw-7t-f3w" firstAttribute="leading" secondItem="BXf-FK-5vF" secondAttribute="leading" id="IhC-ad-64T"/>
-                            <constraint firstItem="Otw-7t-f3w" firstAttribute="bottom" secondItem="BXf-FK-5vF" secondAttribute="bottom" constant="5" id="KXO-pU-Qgh"/>
-                            <constraint firstItem="Otw-7t-f3w" firstAttribute="trailing" secondItem="BXf-FK-5vF" secondAttribute="trailing" id="Th2-U2-TJx"/>
+                            <constraint firstItem="BXf-FK-5vF" firstAttribute="bottom" secondItem="ae1-9t-ibm" secondAttribute="bottom" constant="10" id="Q7A-nB-4Lv"/>
+                            <constraint firstItem="ae1-9t-ibm" firstAttribute="top" secondItem="njh-he-sHr" secondAttribute="bottom" constant="25" id="VjW-fc-x1c"/>
                             <constraint firstItem="njh-he-sHr" firstAttribute="top" secondItem="Z7N-65-F1B" secondAttribute="bottom" constant="10" id="Z77-qx-iUP"/>
+                            <constraint firstItem="ae1-9t-ibm" firstAttribute="leading" secondItem="BXf-FK-5vF" secondAttribute="leading" constant="10" id="a13-j4-3wN"/>
                             <constraint firstItem="njh-he-sHr" firstAttribute="leading" secondItem="BXf-FK-5vF" secondAttribute="leading" constant="16" id="m1F-Wk-UxG"/>
+                            <constraint firstItem="BXf-FK-5vF" firstAttribute="trailing" secondItem="ae1-9t-ibm" secondAttribute="trailing" constant="10" id="yo7-Gj-gDU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="Otw-7t-f3w" id="ip2-8g-hh8"/>
+                        <outlet property="backButton" destination="Z7N-65-F1B" id="Jes-MP-iXa"/>
+                        <outlet property="contentTable" destination="ae1-9t-ibm" id="vxL-Ln-wjw"/>
                         <outlet property="titleLabel" destination="njh-he-sHr" id="vTG-lG-9V5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd6-yH-4nN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.6956521739131" y="1891.7410714285713"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="oaG-eA-nzU">
-            <objects>
-                <viewController id="IGL-yT-tfU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xOx-L3-gwQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="tsV-C4-Ndf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HAW-Xf-pv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2005" y="1415"/>
+            <point key="canvasLocation" x="2790" y="702"/>
         </scene>
         <!--Profile Scene-->
         <scene sceneID="33i-dq-FsL">

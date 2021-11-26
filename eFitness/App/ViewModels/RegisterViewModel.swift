@@ -42,10 +42,7 @@ class RegisterViewModel: BaseViewModel {
     // MARK: - Public Methods
     private func validateInput() {
         Observable
-            .combineLatest(email.asObservable(),
-                           password.asObservable(),
-                           username.asObservable())
-            { [weak self] email, password, username in
+            .combineLatest(email.asObservable(), password.asObservable(), username.asObservable()) { [weak self] email, password, username in
                 guard let self = self else  { return }
                 self.onscreenEmail = email
                 self.onscreenPassword = password
@@ -79,7 +76,7 @@ class RegisterViewModel: BaseViewModel {
         let isPasswordValid = self.validator.isPasswordValid(onscreenPassword)
     
         if !isPasswordValid {
-            message = "Password should contain 8-10 characters, uppercase letter, lowercase letter, number and special character."
+            message = "Password should be 8 or more. Include alphanumerics and specual characters for a strong password."
         }
         
         passwordAlertMessage = message
@@ -95,20 +92,4 @@ class RegisterViewModel: BaseViewModel {
         
         usernameAlertMessage = message
     }
-    
-//    func sendVerificationEmail() {
-//        guard let currentUser = self.currentUser else { return }
-//
-//        if !currentUser.isEmailVerified {
-//            currentUser.sendEmailVerification { error in
-//                if let error = error {
-//                    self.showErrorAlert.accept("\(error.localizedDescription)")
-//                } else {
-//                    self.showSuccessAlert.accept("Email verification link has been sent to your email account")
-//                }
-//            }
-//        } else {
-//            self.showFailureAlert.accept("Operation could not be completed.\nPlease check if your email is correct.")
-//        }
-//    }
 }

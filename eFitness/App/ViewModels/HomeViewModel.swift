@@ -63,7 +63,7 @@ extension HomeViewModel {
             case .editProfile:
                 return (UIImage(named: "puk"), "Edit Profile")
             case .changePassword:
-                return (UIImage(named: "sambaza"), "Change password")
+                return (UIImage(named: "sambaza"), "Reset Password")
             case .aboutApp:
                 return (UIImage(named: "bonga_points"), "About eFitness")
             case .logout:

@@ -32,19 +32,19 @@ extension AboutAppViewModel {
                 return (UIImage(named: "personal-trainer"), description)
                 
             case .video:
-                let description = "eFitness uses live video motion capture to provide you with feedback on your body posture while doing physical activities."
+                let description = "Workout infront of your camera."
                 return (UIImage(named: "video"), description)
                 
             case .aiBot:
-                let description = "eFitness uses live video motion capture to provide you with feedback on your body posture while doing physical activities."
+                let description = "Ebot helps tracks all you movements."
                 return (UIImage(named: "surveillance"), description)
                 
             case .feedback:
-                let description = "eFitness uses live video motion capture to provide you with feedback on your body posture while doing physical activities."
+                let description = "Get live feedback as you work out"
                 return (UIImage(named: "feedback"), description)
                 
             case .usage:
-                let description = "eFitness uses live video motion capture to provide you with feedback on your body posture while doing physical activities."
+                let description = "Train anywhere, anytime."
                 return (UIImage(named: "user-flow"),  description)
             }
         }
